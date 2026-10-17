@@ -79,7 +79,7 @@ function setupCareerApplications(): void {
   if (!form.reportValidity() || !validResume) return;
   const data = new FormData(form);
   const body = ['Job application', ...[['First Name','firstName'],['Last Name','lastName'],['Email','email'],['Phone Number','phone'],['State','state'],['District','district'],['Applying For','role'],['Years of Experience','experience'],['Qualification','qualification']].map(([label,key]) => `${label}: ${data.get(key) || 'Not provided'}`), `Resume URL: ${resumeUrl.value}`].join('\n');
-  const url = `https://mail.google.com/mail/?view=cm&fs=1&to=venkatavyshnavimondi%40gmail.com&su=${encodeURIComponent('Application — '+role.value)}&body=${encodeURIComponent(body)}`;
+  const url = `https://mail.google.com/mail/?view=cm&fs=1&to=mooncrafters%40gmail.com&su=${encodeURIComponent('Application — '+role.value)}&body=${encodeURIComponent(body)}`;
   const link = document.createElement('a');link.href=url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Open application email';
   const status = document.querySelector<HTMLElement>('#career-application-status')!;
   status.replaceChildren(document.createTextNode('Your application has not been sent. Review your details and resume link, then press Send in Gmail. '),link);
