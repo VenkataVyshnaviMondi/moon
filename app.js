@@ -22,7 +22,7 @@ function cards() { return services.map(([name, img, desc]) => `<a class="service
 function notchedServiceCards() {
     return services.map(([name, image, description]) => `<a class="notched-service-card" href="#/contact?service=${encodeURIComponent(name)}"><div class="notched-service-media"><div class="notched-service-cover"><img src="services/${image}" alt="${name}" loading="lazy"></div><span class="service-notch" aria-hidden="true"></span><span class="service-fillet service-fillet-right" aria-hidden="true"></span><span class="service-fillet service-fillet-bottom" aria-hidden="true"></span><span class="notched-service-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></svg></span></div><h3>${name}</h3><p>${description}</p></a>`).join('');
 }
-function clients() { return `<section class="clients client-showcase" aria-labelledby="clients-heading"><h2 id="clients-heading">Our Clients</h2><div class="molten-clients" aria-roledescription="carousel" aria-label="Our clients"><canvas tabindex="0" role="img" aria-label="Client logo carousel. Use arrow keys to change client, or drag to turn the ring."></canvas><div class="client-panels"><div class="client-panel"><img src="swiggy.png" alt="Swiggy" loading="lazy"></div><div class="client-panel"><img src="ayantech.png" alt="Ayantech" loading="lazy"></div></div><div class="molten-caption" aria-live="polite"><small data-client-count>1 / 2</small><h3 data-client-title>Swiggy</h3></div></div></section>`; }
+function clients(showDescriptions = false) { return `<section class="clients client-showcase" aria-labelledby="clients-heading"><h2 id="clients-heading">Our Clients</h2><div class="molten-clients" aria-roledescription="carousel" aria-label="Our clients"><canvas tabindex="0" role="img" aria-label="Client logo carousel. Use arrow keys to change client, or drag to turn the ring."></canvas><div class="client-panels"><div class="client-panel"><img src="swiggy.png" alt="Swiggy" loading="lazy"></div><div class="client-panel"><img src="ayantech.png" alt="Ayantech" loading="lazy"></div></div>${showDescriptions ? '<div class="client-company-description" aria-live="polite"><p data-client-description>Swiggy is India’s leading on-demand convenience and hyperlocal commerce platform for food delivery, Instamart and Dineout. Founded in 2014, it is headquartered in Bengaluru, Karnataka.</p></div>' : ''}<div class="molten-caption" aria-live="polite"><small data-client-count>1 / 2</small><h3 data-client-title>Swiggy</h3></div></div></section>`; }
 function leader(darkHome = false) { return `<section class="leadership${darkHome ? ' leadership-dark' : ''}" aria-label="Meet our CEOs"><div class="leader-slide"><div class="leader-portrait"><img id="leader-image" src="${leaders[0].image}" alt="${leaders[0].name}" loading="lazy"></div><div class="leader-copy"><h2 id="leader-heading">${leaders[0].heading}</h2><p id="leader-copy">${leaders[0].copy}</p><div class="leader-name"><strong id="leader-name">${leaders[0].name}</strong><small>CEO, Moon Crafters</small></div><div class="slider-controls"><button class="active" data-slide="0" aria-label="Show Chippada Tej Kumar" aria-pressed="true"></button><button data-slide="1" aria-label="Show Malla Krishnachaitanya" aria-pressed="false"></button><button class="pause" aria-label="Pause CEO slideshow">Pause slideshow</button></div></div></div></section>`; }
 function process(animated = false) { const steps = [['Discovery & Alignment', 'We get to know your business, audience and goals, then agree on a clear direction.'], ['Design & Iteration', 'We develop ideas and refine them together through focused feedback and review.'], ['Execution', 'We bring the approved direction to life across your brand, website or campaigns.'], ['Delivery & Ongoing Support', 'We hand over the work with guidance and support for what comes next.']]; return `<section class="section process${animated ? ' process-pinned' : ''}"><div class="process-intro"><h2>Great work starts<br>with a clear process.</h2><p>A collaborative approach that keeps every step purposeful, from the first conversation to the final detail.</p><a class="text-link" href="#/contact">Schedule a conversation ${arrow}</a></div><div class="process-list">${animated ? '<svg class="process-trail" viewBox="0 0 700 900" preserveAspectRatio="none" aria-hidden="true"><path d="M175 140 C420 110 490 240 525 310 S310 460 175 520 S320 740 525 740" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="8 6" vector-effect="non-scaling-stroke"/></svg>' : ''}${steps.map(([n, d], i) => `<article>${animated ? '<svg class="process-pin" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 3h8v2h-1v5l3 4v3h-5v5h-2v-5H6v-3l3-4V5H8z"/></svg>' : ''}<span class="step">0${i + 1}</span><div><h3>${n}</h3><p>${d}</p></div></article>`).join('')}</div></section>`; }
 function intro(title, copy) { return `<section class="page-intro"><h1>${title}</h1><p>${copy}</p></section>`; }
@@ -34,7 +34,8 @@ const clientFeedback = [
 function testimonialsSection() {
     return `<section class="section testimonials-section" aria-labelledby="testimonials-heading"><div class="section-head"><h2 id="testimonials-heading">Startup scenarios</h2></div><div class="feedback-carousel" aria-roledescription="carousel" aria-label="Startup scenarios"><div class="feedback-visual"><img id="feedback-image" src="${clientFeedback[0].image}" alt="IT solutions" loading="lazy"></div><div class="feedback-card"><div id="feedback-content" aria-live="polite"><h3 id="feedback-title">${clientFeedback[0].title}</h3><p id="feedback-scenario">${clientFeedback[0].scenario}</p><blockquote id="feedback-quote">${clientFeedback[0].quote}</blockquote></div><a class="text-link" href="#/contact">Let’s discuss your goals ${arrow}</a></div></div><div class="feedback-controls"><button type="button" data-feedback-prev aria-label="Previous scenario"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><div class="feedback-dots">${clientFeedback.map((_, i) => `<button type="button" data-feedback-slide="${i}" aria-label="Show startup scenario ${i + 1}" aria-pressed="${i === 0}"></button>`).join('')}</div><button type="button" data-feedback-next aria-label="Next scenario"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div></section>`;
 }
-let cleanupCeoScroll;
+let cleanupHomeVideoScroll;
+let cleanupCeoOverlap;
 let cleanupFeedback;
 function setupTestimonials() {
     const carousel = document.querySelector('.feedback-carousel');
@@ -121,12 +122,18 @@ function homeHero() {
     return `<section class="brand-story" aria-label="Moon Crafters introduction"><div class="brand-stage"><div class="brand-orbit" aria-hidden="true"></div><img class="brand-story-logo" src="logo1.png" alt="" aria-hidden="true"><article class="brand-scene brand-welcome" data-scene="0"><div class="brand-cover"><h1>Moon Crafters</h1><div class="brand-cover-bottom"><h2>Build brands.<br><span>Create impact.</span></h2><div><p>Your next chapter starts with design, digital marketing and technology working together.</p><a class="button" href="#/services">Explore what we do ${arrow}</a></div></div></div></article><article class="brand-scene brand-clients" data-scene="1" id="home-clients">${clients()}</article><article class="brand-scene brand-services brand-services-discovery" data-scene="2"><h2 class="service-discovery-heading">Our <span>Services</span></h2><div class="service-discovery"><figure class="service-discovery-preview"><div class="service-discovery-picture"><img id="discovery-image" src="services/${services[0][1]}" alt="${services[0][0]}" loading="lazy"></div><figcaption><strong id="discovery-name">${services[0][0]}</strong><p id="discovery-description">${services[0][2]}</p></figcaption></figure><div class="service-discovery-index" aria-label="Explore services">${services.map(([name], index) => `<a class="service-index-link${index === 0 ? ' is-selected' : ''}" data-discovery="${index}" href="#/contact?service=${encodeURIComponent(name)}">${name}</a>`).join('')}</div></div></article><div class="brand-scene-nav" role="group" aria-label="Hero chapters">${labels.map((label, index) => `<button type="button" data-chapter="${index}" aria-label="${label}" ${index === 0 ? 'aria-current="step"' : ''}><span>${label}</span><i aria-hidden="true"></i></button>`).join('')}</div><div class="brand-stage-footer" aria-hidden="true"></div><div class="brand-story-progress" aria-hidden="true"><i></i></div></div></section>`;
 }
 const pages = {
-    home: () => `${homeHero()}<div class="ceo-scroll-story"><div class="ceo-scroll-stage">${leader(true)}</div></div><section class="section services-home"><div class="section-head"><h2>Different expertise.<br>One shared ambition.</h2><a class="text-link" href="#/services">All our services ${arrow}</a></div><div class="service-grid">${cards()}</div></section>${testimonialsSection()}${process(true)}`,
+    home: () => `${homeHero()}${leader(true)}<div class="home-after-ceo"><section class="home-video-scroll" aria-label="Moon Crafters services video"><div class="home-video-sticky"><div class="home-video-media"><video autoplay loop muted playsinline preload="metadata" aria-label="Moon Crafters services"><source src="video.mp4" type="video/mp4"></video><div class="home-video-overlay"><h2>Our Services</h2><p>Creative thinking. Connected technology.</p></div></div></div></section><section class="section services-home"><div class="section-head"><h2>Different expertise.<br>One shared ambition.</h2><a class="text-link" href="#/services">All our services ${arrow}</a></div><div class="service-grid">${cards()}</div></section>${testimonialsSection()}${process(true)}</div>`,
     about: () => `<section class="about-editorial" aria-labelledby="about-hero-title"><h1 id="about-hero-title" class="about-editorial-title"><span>Moon</span><img src="logo1.png" alt=""><span>Crafters</span></h1><div class="about-ceo-rows"><article class="about-ceo-row" aria-labelledby="about-malla"><div class="about-ceo-text"><h2 id="about-malla">Meet<br><strong>Mr.&nbsp;Malla Krishnachaitanya</strong></h2><p class="about-ceo-role">CEO of Moon Crafters Solutions</p><p>Building your digital presence is a collaborative journey. We connect creative thinking with practical solutions, keeping your business goals at the heart of the work.</p><a class="about-ceo-link" href="#/contact">Start a conversation ${arrow}</a></div><figure class="about-ceo-photo"><img src="Malla Krishnachaitanya.png" alt="Malla Krishnachaitanya, CEO of Moon Crafters Solutions" fetchpriority="high"></figure></article><article class="about-ceo-row" aria-labelledby="about-tej"><div class="about-ceo-text"><h2 id="about-tej">Meet<br><strong>Mr.&nbsp;Chippada Tej Kumar</strong></h2><p class="about-ceo-role">CEO of Moon Crafters Solutions</p><p>We bring design, marketing and technology together to help businesses take their next step with clarity. Every project starts with listening, and every detail has a purpose.</p><a class="about-ceo-link" href="#/contact">Start a conversation ${arrow}</a></div><figure class="about-ceo-photo"><img src="Chippada Tej Kumar.png" alt="Chippada Tej Kumar, CEO of Moon Crafters Solutions" loading="lazy"></figure></article></div></section><section class="section about-company about-company-statement" aria-labelledby="about-company-title"><div class="about-statement-content"><h2 id="about-company-title">Your growth. Our purpose.</h2><p class="about-belief">At Moon Crafters, we bring technology and creative thinking together through IT services and digital marketing. We prioritize our customers&#8217; growth and satisfaction because quality matters more than quantity.</p><div class="about-statement-bottom"><p>MOON CRAFTERS SOLUTIONS PRIVATE LIMITED is a Private Limited Company incorporated on May 21, 2025 in India.</p><a class="text-link" href="#/services">Explore our services ${arrow}</a></div></div></section><section class="clients client-showcase about-static-clients" aria-labelledby="about-clients-heading"><h2 id="about-clients-heading">Our Clients</h2><div class="client-panels"><div class="client-panel"><img src="swiggy.png" alt="Swiggy" loading="lazy"></div><div class="client-panel"><img src="ayantech.png" alt="Ayantech" loading="lazy"></div></div></section>`,
-    services: () => `<section class="page-intro services-page-heading"><h1>Our Services</h1></section><section class="section notched-services-section"><div class="service-grid">${notchedServiceCards()}</div></section>`,
-    clients: () => `<section class="clients-page-hero" aria-labelledby="clients-page-title"><div class="clients-page-hero-copy"><h1 id="clients-page-title">Better,<br><span>together.</span></h1><p>The brands we work with are part of our story. Here&#8217;s to ideas, collaboration and what comes next.</p></div></section>${clients()}${process()}`,
+    services: () => `<section class="page-intro services-page-heading"><h1 class="services-text-shimmer">Our Services</h1></section><section class="section notched-services-section"><div class="service-grid">${notchedServiceCards()}</div></section>`,
+    clients: () => `<section class="clients-page-hero" aria-labelledby="clients-page-title"><div class="clients-page-hero-copy"><h1 id="clients-page-title">Better,<br><span>together.</span></h1><p>The brands we work with are part of our story. Here&#8217;s to ideas, collaboration and what comes next.</p></div></section>${clients(true)}${process(true)}`,
     careers: () => `<section class="careers-page-hero" aria-labelledby="careers-page-title"><div class="careers-page-hero-copy"><h1 id="careers-page-title">Make your next move<br><span>mean something.</span></h1><p>Curious thinkers. Thoughtful makers. People who care about the work. There&#8217;s room for your perspective at Moon Crafters.</p></div></section>${careerOpenings()}`,
-    contact: () => `${intro('Big idea?<br><span>Let’s talk.</span>', 'Tell us what you have in mind. We’ll start with a conversation and find the right way forward.')}<section class="section contact-layout"><div class="contact-info"><h2>A conversation<br>changes things.</h2><div class="contact-item"><small>Call us</small><a href="tel:+917032004558">+91 70320 04558</a></div><div class="contact-item"><small>Write to us</small><a href="mailto:mooncrafters@gamil.com">mooncrafters@gamil.com</a></div><div class="contact-item"><small>Find us</small><p>13-35-1, Chakali Veedhi, Kothavalasa, Vizianagaram, Kothavalasa, Andhra Pradesh, India, 535183</p></div><iframe title="Google Map of Moon Crafters in Kothavalasa" src="https://maps.google.com/maps?q=13-35-1%2C%20Chakali%20Veedhi%2C%20Kothavalasa%2C%20Vizianagaram%2C%20Kothavalasa%2C%20Andhra%20Pradesh%2C%20India%2C%20535183&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><form id="enquiry"><label class="full">Full name <span aria-hidden="true">*</span><input name="name" autocomplete="name" placeholder="Your full name" required maxlength="100"></label><label>Phone number <span aria-hidden="true">*</span><input name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="10-digit mobile number" pattern="[0-9]{10}" maxlength="10" title="Enter a 10-digit phone number" required></label><label>Email address <span aria-hidden="true">*</span><input name="email" type="email" autocomplete="email" placeholder="you@company.com" required maxlength="254"></label><label class="full">Tell us about your goals <span aria-hidden="true">*</span><textarea name="goals" placeholder="A little about your business, your idea and what you’d like to achieve…" required maxlength="5000"></textarea></label><div class="form-foot"><p>All fields are required. Send enquiry opens a Gmail draft with your details. Review it and press Send in Gmail to complete your enquiry.</p><button class="button" type="submit">Send enquiry ${arrow}</button><p id="form-status" class="form-status" role="status"></p><a id="mail-fallback" hidden class="text-link">Open in your email app ${arrow}</a></div></form></section>`
+    contact: () => `<section class="contact-page-hero" aria-labelledby="contact-page-title"><div class="contact-page-hero-copy"><h1 id="contact-page-title">Big idea?<br><span>Let&#8217;s talk.</span></h1><p>Tell us what you have in mind. We&#8217;ll start with a conversation and find the right way forward.</p></div></section><section class="section contact-layout"><div class="contact-info"><h2>A conversation<br>changes things.</h2><div class="contact-item"><img class="contact-detail-icon" src="call.png" alt="" aria-hidden="true"><small>Call us</small><a href="tel:+917032004558">+91 70320 04558</a></div><div class="contact-item"><img class="contact-detail-icon" src="mail.png" alt="" aria-hidden="true"><small>Write to us</small><a href="mailto:mooncrafters@gamil.com">mooncrafters@gamil.com</a></div><div class="contact-item"><img class="contact-detail-icon" src="location.png" alt="" aria-hidden="true"><small>Find us</small><p>13-35-1, Chakali Veedhi, Kothavalasa, Vizianagaram, Kothavalasa, Andhra Pradesh, India, 535183</p></div><iframe title="Google Map of Moon Crafters in Kothavalasa" src="https://maps.google.com/maps?q=Chakali%20Veedhi%2C%20Kothavalasa%2C%20Vizianagaram%2C%20Kothavalasa%2C%20Andhra%20Pradesh%2C%20India%2C%20535183&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><form id="enquiry" class="contact-rounded-form" aria-labelledby="contact-form-heading"><div class="contact-form-heading"><p class="contact-form-tag">Contact Us</p><h2 id="contact-form-heading">Let&#8217;s Get In Touch.</h2></div>
+<label for="enquiry-name">Full Name <span aria-hidden="true">*</span></label><div class="contact-input-shell"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg><input id="enquiry-name" name="name" autocomplete="name" placeholder="Enter your full name" required maxlength="100"></div>
+<label for="enquiry-phone">Phone Number <span aria-hidden="true">*</span></label><div class="contact-input-shell"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3H3c-1 10 8 19 18 18v-4l-5-2-2 2a16 16 0 0 1-7-7l2-2-3-5Z"/></svg><input id="enquiry-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="Enter your phone number" pattern="[0-9]{10}" maxlength="10" title="Enter a 10-digit phone number" required></div>
+<label for="enquiry-email">Email Address <span aria-hidden="true">*</span></label><div class="contact-input-shell"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><input id="enquiry-email" name="email" type="email" aria-describedby="enquiry-email-error" autocomplete="email" placeholder="Enter your email address" required maxlength="254"></div>
+<p id="enquiry-email-error" class="contact-email-error" role="alert"></p><label for="enquiry-service">Service <span aria-hidden="true">*</span></label><select id="enquiry-service" name="service" required><option value="">Select a service</option>${services.map(([name]) => `<option value="${name}">${name}</option>`).join('')}</select>
+<label for="enquiry-goals">Tell us your goal <span aria-hidden="true">*</span></label><textarea id="enquiry-goals" name="goals" rows="4" placeholder="Tell us what you would like to achieve" required maxlength="5000"></textarea>
+<div class="form-foot"><button class="button" type="submit">Submit Form <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div></form></section>`
 };
 let cleanupAboutCeo;
 function setupAboutCeo() {
@@ -443,24 +450,42 @@ function setupForm(query) {
     const phone = requiredElement('[name="phone"]');
     const email = requiredElement('[name="email"]');
     const goals = requiredElement('[name="goals"]');
-    const service = new URLSearchParams(query).get('service');
-    if (service)
-        goals.value = `I?m interested in ${service}. `;
+    const emailError = requiredElement('#enquiry-email-error');
+    const validateEmail = () => {
+        email.value = email.value.trim();
+        const valid = /^[^\s@]+@[^\s@.]+(?:\.[^\s@.]+)+$/.test(email.value) && !email.validity.typeMismatch;
+        const message = valid ? '' : 'Enter a valid email address, such as name@example.com.';
+        email.setCustomValidity(message);
+        email.setAttribute('aria-invalid', String(!valid));
+        emailError.textContent = message;
+        return valid;
+    };
+    email.addEventListener('blur', validateEmail);
+    email.addEventListener('input', () => {
+        email.setCustomValidity('');
+        email.removeAttribute('aria-invalid');
+        emailError.textContent = '';
+    });
+    email.addEventListener('invalid', () => { validateEmail(); });
+    const serviceField = requiredElement('#enquiry-service');
+    const requestedService = new URLSearchParams(query).get('service');
+    if (requestedService) {
+        const matchingService = services.find(([name]) => name.toLowerCase() === requestedService.toLowerCase());
+        if (matchingService)
+            serviceField.value = matchingService[0];
+    }
     phone.addEventListener('input', () => { phone.value = phone.value.replace(/\D/g, '').slice(0, 10); });
     form.onsubmit = event => {
         event.preventDefault();
         name.value = name.value.trim();
         goals.value = goals.value.trim();
-        if (!form.reportValidity())
+        const emailIsValid = validateEmail();
+        if (!form.reportValidity() || !emailIsValid)
             return;
         const subject = `Website enquiry from ${name.value}`;
-        const body = `Full name: ${name.value}\nPhone: ${phone.value}\nEmail: ${email.value}\n\nTell us about your goals:\n${goals.value}`;
+        const body = `Full name: ${name.value}\nPhone: ${phone.value}\nEmail: ${email.value}\nService: ${serviceField.value}\n\nTell us about your goals:\n${goals.value}`;
         const params = new URLSearchParams({ view: 'cm', fs: '1', to: 'mooncrafters@gamil.com', su: subject, body });
         window.open(`https://mail.google.com/mail/?${params}`, '_blank', 'noopener,noreferrer');
-        requiredElement('#form-status').textContent = 'Review your enquiry and press Send in Gmail. If a new tab did not open, use the email link below.';
-        const fallback = requiredElement('#mail-fallback');
-        fallback.hidden = false;
-        fallback.href = `mailto:mooncrafters@gamil.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     };
 }
 function route() {
@@ -478,8 +503,10 @@ function route() {
     cleanupSignalHeading = undefined;
     cleanupAboutParticles?.();
     cleanupAboutParticles = undefined;
-    cleanupCeoScroll?.();
-    cleanupCeoScroll = undefined;
+    cleanupHomeVideoScroll?.();
+    cleanupHomeVideoScroll = undefined;
+    cleanupCeoOverlap?.();
+    cleanupCeoOverlap = undefined;
     cleanupFeedback?.();
     cleanupFeedback = undefined;
     cleanupServices?.();
@@ -515,8 +542,8 @@ function route() {
     setupTestimonials();
     setupCareerApplications();
     setupServiceDiscovery();
-    setupCeoScroll();
-    setupSignalHeading();
+    setupHomeVideoScroll();
+    setupCeoOverlap();
     setupPurposeReveal();
     setupAboutCeo();
     const aboutTitle = document.querySelector('.about-editorial-title');
@@ -565,34 +592,64 @@ window.addEventListener('keydown', event => {
     }
 });
 route();
-function setupCeoScroll() {
-    const story = document.querySelector('.ceo-scroll-story');
-    const stage = story?.querySelector('.ceo-scroll-stage');
-    const section = story?.querySelector('.leadership-dark');
-    if (!story || !stage || !section)
+function setupHomeVideoScroll() {
+    const story = document.querySelector('.home-video-scroll');
+    const stage = story?.querySelector('.home-video-sticky');
+    const media = story?.querySelector('.home-video-media');
+    const video = story?.querySelector('video');
+    if (!story || !stage || !media || !video)
         return;
     let frame = 0;
+    let visible = false;
+    const playback = () => {
+        if (visible && !document.hidden && !reducedMotion.matches)
+            void video.play().catch(() => { });
+        else
+            video.pause();
+    };
     const update = () => {
         frame = 0;
         if (reducedMotion.matches) {
-            section.style.transform = 'none';
+            media.style.transform = 'none';
             return;
         }
         const top = parseFloat(getComputedStyle(stage).top) || 0;
         const distance = Math.max(1, story.offsetHeight - stage.offsetHeight);
         const progress = Math.max(0, Math.min(1, (top - story.getBoundingClientRect().top) / distance));
-        section.style.transform = `scale(${.25 + .75 * progress})`;
+        media.style.transform = `scale(${.25 + progress * .75})`;
     };
     const schedule = () => { if (!frame)
         frame = requestAnimationFrame(update); };
+    const motionChange = () => { schedule(); playback(); };
+    const observer = new IntersectionObserver(entries => { visible = entries[0].isIntersecting; playback(); });
+    observer.observe(story);
     window.addEventListener('scroll', schedule, { passive: true });
     window.addEventListener('resize', schedule);
-    reducedMotion.addEventListener('change', schedule);
+    document.addEventListener('visibilitychange', playback);
+    reducedMotion.addEventListener('change', motionChange);
     update();
-    cleanupCeoScroll = () => {
+    cleanupHomeVideoScroll = () => {
         cancelAnimationFrame(frame);
+        observer.disconnect();
+        video.pause();
         window.removeEventListener('scroll', schedule);
         window.removeEventListener('resize', schedule);
-        reducedMotion.removeEventListener('change', schedule);
+        document.removeEventListener('visibilitychange', playback);
+        reducedMotion.removeEventListener('change', motionChange);
     };
+}
+function setupCeoOverlap() {
+    const ceo = document.querySelector('.brand-story + .leadership-dark, .about-editorial');
+    if (!ceo)
+        return;
+    const measure = () => {
+        const headerHeight = window.innerWidth <= 760 ? 80 : 104;
+        const readingSpace = ceo.matches('.about-editorial') ? 40 : 0;
+        ceo.style.setProperty('--ceo-sticky-top', `${Math.min(headerHeight, window.innerHeight - ceo.offsetHeight - readingSpace)}px`);
+    };
+    const observer = new ResizeObserver(measure);
+    observer.observe(ceo);
+    window.addEventListener('resize', measure);
+    measure();
+    cleanupCeoOverlap = () => { observer.disconnect(); window.removeEventListener('resize', measure); };
 }

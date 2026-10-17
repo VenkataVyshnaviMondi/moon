@@ -452,6 +452,8 @@ function packAtlas(
    const title = root.querySelector<HTMLElement>('[data-client-title]');
    const countLabel = root.querySelector<HTMLElement>('[data-client-count]');
    if (title) title.textContent = items[index].title;
+   const description = root.querySelector<HTMLElement>('[data-client-description]');
+   if (description) description.textContent = index === 0 ? 'Swiggy is India’s leading on-demand convenience and hyperlocal commerce platform for food delivery, Instamart and Dineout. Founded in 2014, it is headquartered in Bengaluru, Karnataka.' : 'Ayan Tech is an information technology and enterprise software provider.';
    if (countLabel) countLabel.textContent = `${index + 1} / ${count}`;
   };
     const canvas = root.querySelector<HTMLCanvasElement>("canvas");
