@@ -3,8 +3,8 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
-const output = path.resolve(root, 'dist');
-if (path.dirname(output) !== path.resolve(root) || path.basename(output) !== 'dist') {
+const output = path.resolve(root, 'public');
+if (path.dirname(output) !== path.resolve(root) || path.basename(output) !== 'public') {
   throw new Error('Invalid static output directory');
 }
 await rm(output, { recursive: true, force: true });
@@ -16,4 +16,4 @@ for (const entry of await readdir(root, { withFileTypes: true })) {
   }
 }
 await cp(path.join(root, 'services'), path.join(output, 'services'), { recursive: true });
-console.log('Static website ready in dist/');
+console.log('Static website ready in public/');
