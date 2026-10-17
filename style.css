@@ -778,3 +778,6 @@ html:has(.about-editorial),body:has(.about-editorial){overflow-x:clip}
 .about-ceo-link{background:#1165c5;color:#fff;border-color:#1165c5;transition:background-color .2s,color .2s,border-color .2s}
 .about-ceo-link:hover,.about-ceo-link:active,.about-ceo-link:focus-visible{background:#fff;color:#1165c5;border-color:#1165c5}
 #enquiry .contact-email-error{font-size:13px;line-height:1.5;color:#a51d32;margin:-14px 0 18px}#enquiry .contact-email-error:empty{display:none}.contact-input-shell:has(input[aria-invalid="true"]){border-color:#a51d32}
+/* About CEO action: white default, blue on interaction. */
+.about-ceo-link{background:#fff;color:#1165c5;border-color:#1165c5}
+.about-ceo-link:hover,.about-ceo-link:active,.about-ceo-link:focus-visible{background:#1165c5;color:#fff;border-color:#1165c5}
