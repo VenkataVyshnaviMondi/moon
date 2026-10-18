@@ -1,0 +1,17 @@
+{
+  "template": "original white-and-blue",
+  "checks": [
+    "Desktop matches the original About template and selected navigation.",
+    "Route #/ renders.",
+    "Route #/about renders.",
+    "Route #/services renders.",
+    "Route #/clients renders.",
+    "Route #/careers renders.",
+    "Route #/contact renders.",
+    "Service-specific contact link preselects Zoho Projects.",
+    "Mobile navigation opens, follows a route and closes.",
+    "Mobile About page fits the viewport.",
+    "No unhandled browser errors."
+  ],
+  "errors": []
+}

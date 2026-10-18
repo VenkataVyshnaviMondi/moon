@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "tsc --noEmit && vite build && node scripts/prerender.mjs",
+    "build": "npm run compile && node scripts/build-static.mjs",
+    "compile": "tsc",
     "typecheck": "tsc --noEmit",
-    "dev": "vite --host 0.0.0.0",
+    "dev": "npm run compile && vite --host 0.0.0.0",
     "preview": "vite preview --host 0.0.0.0",
-    "check": "node scripts/verify.mjs"
+    "check": "node .verify.cjs",
+    "check:browser": "node scripts/verify-template.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.14.0",

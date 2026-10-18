@@ -1,80 +1,41 @@
-# Mooncrafters
+# Moon Crafters
 
-A responsive agency website built with React, TypeScript and Vite. The production build pre-renders the complete page into HTML, then hydrates it for mobile navigation and enquiry interactions. Content, navigation and calls to action are readable before JavaScript runs.
+The original white, blue and cyan agency template is the active website. It keeps the supplied logo, italic Moon / atom / Crafters title, CEO portraits, service illustrations and six hash-routed pages. The About page matches the user's selected screenshot.
 
-## Develop and build
+## Run locally
 
 ```sh
 npm install
 npm run dev
 ```
 
-Create and preview the production build:
+Open the URL printed by Vite. Home is `#/`; the screenshot's About page is `#/about`. Other routes are `#/services`, `#/clients`, `#/careers` and `#/contact`.
 
 ```sh
+npm run typecheck
 npm run build
 npm run preview -- --port 4173
-```
-
-`npm run build` runs TypeScript checks, builds with Vite, and runs `scripts/prerender.mjs`. The deployable output is `dist/`. `npm run typecheck` checks types separately. `vercel.json` configures the production build and output directory; no deployment has been made as part of this implementation.
-
-## Content and components
-
-Business content follows the inspected [Mooncrafters reference website](https://mooncrafters.vercel.app/). Services are Branding, Social Media Marketing, Google Ads, Meta Ads, YouTube Marketing, Web Designing, IT Solutions and Zoho Projects. Work proof is limited to the reference's Swiggy and Ayantech client logos. No testimonials, awards, project outcomes or performance results have been invented.
-
-- [src/content.ts](src/content.ts): service descriptions and verified contact/social details.
-- [src/App.tsx](src/App.tsx): page structure, About, Work, Contact and `ProjectCard`.
-- [src/components](src/components): `Header`, `Hero`, `ServicesSection`/`ServiceCard`, `ProcessSteps`, `ContactForm`, `Footer` and shared SVG icons.
-- [src/styles.css](src/styles.css): responsive layout, typography, focus states and motion preferences.
-- [public](public): optimized supplied imagery, favicon and the local font.
-
-Original source files and assets remain in the repository for reference. They are not part of the new production loading path.
-
-## Enquiry delivery
-
-By default, the form prepares a draft addressed to `mooncrafters@gmail.com`. It explicitly says that no enquiry has been sent, and presents an **Open email app to send** link. The visitor must review and send the email in their email app. Without JavaScript, the native form uses a `mailto:` POST fallback with the same review-and-send requirement. No submission is stored by this static site.
-
-To enable direct submissions, copy `.env.example` to `.env.local`, configure a real endpoint, and rebuild:
-
-```dotenv
-VITE_CONTACT_ENDPOINT=/api/contact
-```
-
-The endpoint may be an HTTPS URL or a same-origin path beginning with a single `/`. This repository does not provide that backend. The form sends `POST` JSON with these fields:
-
-```json
-{
-  "fullName": "Visitor name",
-  "email": "visitor@example.com",
-  "phone": "",
-  "service": "Web Designing",
-  "goals": "The visitor's project description.",
-  "website": ""
-}
-```
-
-The UI reports success only after an HTTP 2xx response; failures and timeouts show an honest error. Before returning 2xx, the endpoint must validate fields, apply rate limiting and spam protection, and persist or deliver the enquiry. Configure CORS for an external endpoint. Browser validation and the honeypot do not replace server validation.
-
-`VITE_` variables are public build-time configuration, never secrets. Keep email-provider credentials and other secrets on the backend. Changes require rebuilding and redeploying the site. If no valid endpoint is configured, the email draft flow remains active.
-
-## Verification and performance
-
-Install Chromium once, build the site, and keep the production preview running on port 4173 in another terminal:
-
-```sh
-npx playwright install chromium
-npm run build
-npm run preview -- --port 4173
-```
-
-Then run:
-
-```sh
 npm run check
 ```
 
-The browser checks exercise pre-rendered content, navigation, enquiry behavior, responsive layouts, automated accessibility rules and runtime errors, and collect a throttled mobile performance sample. Results and screenshots are written to `.impeccable/review/`; the machine-readable report is `.impeccable/review/checks.json`. Use `VERIFY_URL` to test another running URL. Consult the generated report and `PERFORMANCE.md` for measurements actually obtained; the presence of a check does not imply it passed.
+The development command compiles the original TypeScript before starting Vite. The production build compiles the original scripts and copies the static site to `dist/`. `vercel.json` uses this output. The check command runs the original template smoke checks in `.verify.cjs`.
 
-The production site uses one locally hosted Sora font of about 33 KB, optimized WebP versions of supplied images with explicit dimensions, a raster-free SVG hero, and short CSS transitions with reduced-motion support. It loads no animation library, background video, particles, custom cursor or third-party tracking scripts. Below-fold images are lazy loaded. The full initial HTML contains the headline, services and enquiry form.
+The restored preview in this session is running at `http://localhost:5174/#/about` because port 5173 was already serving another project. For browser checks, run `npm run check:browser` with `VERIFY_URL` set to the URL printed by Vite (the default is port 5173).
 
-LCP ≤ 2.5 seconds, INP ≤ 200 milliseconds and CLS ≤ 0.1 are measurement goals, not guarantees. Local Chromium samples are not field Core Web Vitals; the synthetic interaction timing is not field INP. Real-user monitoring after deployment is needed to assess those goals. External social accounts, email-app delivery and a future submission backend require separate integration checks.
+## Active source
+
+- `index.html`: original header, footer, fonts and script entry points.
+- `style.css`: original responsive template styles.
+- `src/app.ts`: page templates, hash routing, mobile navigation and contact interactions; compiled to `app.js`.
+- Other `src/*.ts` helpers: client visualization, About particles, service wheel and careers interactions.
+- Root images, `services/` and `video.mp4`: original supplied visual assets.
+
+The React files, including `src/App.tsx`, are inactive reference material. They are not routed, compiled or loaded by the restored site. The earlier React prerender and verification scripts do not describe this template.
+
+## Content and enquiries
+
+Services are Branding, Social Media Marketing, Web Designing, IT Solutions, Google Ads, Meta Ads, Zoho Projects and YouTube Marketing. Company contacts, Swiggy and Ayantech logos, and the portraits of Malla Krishnachaitanya and Chippada Tej Kumar remain in the original template. Startup scenarios are labelled as scenarios, not customer testimonials.
+
+The contact form opens a Gmail draft addressed to `mooncrafters@gmail.com`. The visitor must review and send it; the website does not submit or store an enquiry. Careers applications also prepare an unsent Gmail draft. Email and telephone links provide direct contact options. No live submission endpoint is connected, and the inactive React `VITE_CONTACT_ENDPOINT` configuration does not apply to this template.
+
+The original template includes Google Fonts, a map iframe, video, particles and a WebGL client visualization. Previous navy-template performance measurements are obsolete. See [PERFORMANCE.md](PERFORMANCE.md) for current verification scope and remaining checks.

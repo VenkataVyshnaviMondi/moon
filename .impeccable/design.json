@@ -1,436 +1,49 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-18T05:40:40Z",
-  "title": "Design System: Mooncrafters",
+  "title": "Moon Crafters ? original white-and-blue template",
   "extensions": {
     "colorMeta": {
-      "navy": {
-        "role": "neutral",
-        "displayName": "Deep Navy",
-        "canonical": "#101725",
-        "tonalRamp": [
-          "oklch(15% 0.0301 263.57)",
-          "oklch(26% 0.0301 263.57)",
-          "oklch(38% 0.0301 263.57)",
-          "oklch(49% 0.0301 263.57)",
-          "oklch(61% 0.0301 263.57)",
-          "oklch(72% 0.0301 263.57)",
-          "oklch(84% 0.0301 263.57)",
-          "oklch(95% 0.0301 263.57)"
-        ]
-      },
-      "panel": {
-        "role": "neutral",
-        "displayName": "Slate Panel",
-        "canonical": "#192231",
-        "tonalRamp": [
-          "oklch(15% 0.0315 260.41)",
-          "oklch(26% 0.0315 260.41)",
-          "oklch(38% 0.0315 260.41)",
-          "oklch(49% 0.0315 260.41)",
-          "oklch(61% 0.0315 260.41)",
-          "oklch(72% 0.0315 260.41)",
-          "oklch(84% 0.0315 260.41)",
-          "oklch(95% 0.0315 260.41)"
-        ]
-      },
-      "paper": {
-        "role": "neutral",
-        "displayName": "Warm Paper",
-        "canonical": "#f5f5ef",
-        "tonalRamp": [
-          "oklch(15% 0.0079 106.55)",
-          "oklch(26% 0.0079 106.55)",
-          "oklch(38% 0.0079 106.55)",
-          "oklch(49% 0.0079 106.55)",
-          "oklch(61% 0.0079 106.55)",
-          "oklch(72% 0.0079 106.55)",
-          "oklch(84% 0.0079 106.55)",
-          "oklch(95% 0.0079 106.55)"
-        ]
-      },
-      "lime": {
-        "role": "primary",
-        "displayName": "Connected Lime",
-        "canonical": "#d5f77c",
-        "tonalRamp": [
-          "oklch(15% 0.1544 122.22)",
-          "oklch(26% 0.1544 122.22)",
-          "oklch(38% 0.1544 122.22)",
-          "oklch(49% 0.1544 122.22)",
-          "oklch(61% 0.1544 122.22)",
-          "oklch(72% 0.1544 122.22)",
-          "oklch(84% 0.1544 122.22)",
-          "oklch(95% 0.1544 122.22)"
-        ]
-      },
-      "cyan": {
-        "role": "secondary",
-        "displayName": "Clear Cyan",
-        "canonical": "#8ce0e6",
-        "tonalRamp": [
-          "oklch(15% 0.0820 201.56)",
-          "oklch(26% 0.0820 201.56)",
-          "oklch(38% 0.0820 201.56)",
-          "oklch(49% 0.0820 201.56)",
-          "oklch(61% 0.0820 201.56)",
-          "oklch(72% 0.0820 201.56)",
-          "oklch(84% 0.0820 201.56)",
-          "oklch(95% 0.0820 201.56)"
-        ]
-      },
-      "coral": {
-        "role": "secondary",
-        "displayName": "Warm Coral",
-        "canonical": "#f0a5a6",
-        "tonalRamp": [
-          "oklch(15% 0.0892 18.37)",
-          "oklch(26% 0.0892 18.37)",
-          "oklch(38% 0.0892 18.37)",
-          "oklch(49% 0.0892 18.37)",
-          "oklch(61% 0.0892 18.37)",
-          "oklch(72% 0.0892 18.37)",
-          "oklch(84% 0.0892 18.37)",
-          "oklch(95% 0.0892 18.37)"
-        ]
+      "ink": {
+        "canonical": "#102e38",
+        "displayName": "ink"
       },
       "muted": {
-        "role": "neutral",
-        "displayName": "Muted Slate",
-        "canonical": "#adb5c2",
-        "tonalRamp": [
-          "oklch(15% 0.0206 260.17)",
-          "oklch(26% 0.0206 260.17)",
-          "oklch(38% 0.0206 260.17)",
-          "oklch(49% 0.0206 260.17)",
-          "oklch(61% 0.0206 260.17)",
-          "oklch(72% 0.0206 260.17)",
-          "oklch(84% 0.0206 260.17)",
-          "oklch(95% 0.0206 260.17)"
-        ]
+        "canonical": "#526970",
+        "displayName": "muted"
+      },
+      "blue": {
+        "canonical": "#006f8d",
+        "displayName": "blue"
+      },
+      "cyan": {
+        "canonical": "#29d3e5",
+        "displayName": "cyan"
+      },
+      "pale": {
+        "canonical": "#effbfe",
+        "displayName": "pale"
       },
       "line": {
-        "role": "neutral",
-        "displayName": "Fine Slate Rule",
-        "canonical": "#303947",
-        "tonalRamp": [
-          "oklch(15% 0.0275 259.14)",
-          "oklch(26% 0.0275 259.14)",
-          "oklch(38% 0.0275 259.14)",
-          "oklch(49% 0.0275 259.14)",
-          "oklch(61% 0.0275 259.14)",
-          "oklch(72% 0.0275 259.14)",
-          "oklch(84% 0.0275 259.14)",
-          "oklch(95% 0.0275 259.14)"
-        ]
-      },
-      "text": {
-        "role": "neutral",
-        "displayName": "Bright Text",
-        "canonical": "#f6f7f2",
-        "tonalRamp": [
-          "oklch(15% 0.0067 115.70)",
-          "oklch(26% 0.0067 115.70)",
-          "oklch(38% 0.0067 115.70)",
-          "oklch(49% 0.0067 115.70)",
-          "oklch(61% 0.0067 115.70)",
-          "oklch(72% 0.0067 115.70)",
-          "oklch(84% 0.0067 115.70)",
-          "oklch(95% 0.0067 115.70)"
-        ]
-      },
-      "services-surface": {
-        "role": "neutral",
-        "displayName": "Services Surface",
-        "canonical": "#131c2b",
-        "tonalRamp": [
-          "oklch(15% 0.0323 260.34)",
-          "oklch(26% 0.0323 260.34)",
-          "oklch(38% 0.0323 260.34)",
-          "oklch(49% 0.0323 260.34)",
-          "oklch(61% 0.0323 260.34)",
-          "oklch(72% 0.0323 260.34)",
-          "oklch(84% 0.0323 260.34)",
-          "oklch(95% 0.0323 260.34)"
-        ]
-      },
-      "service-card": {
-        "role": "neutral",
-        "displayName": "Service Card",
-        "canonical": "#1b2534",
-        "tonalRamp": [
-          "oklch(15% 0.0317 258.31)",
-          "oklch(26% 0.0317 258.31)",
-          "oklch(38% 0.0317 258.31)",
-          "oklch(49% 0.0317 258.31)",
-          "oklch(61% 0.0317 258.31)",
-          "oklch(72% 0.0317 258.31)",
-          "oklch(84% 0.0317 258.31)",
-          "oklch(95% 0.0317 258.31)"
-        ]
-      },
-      "technology-card": {
-        "role": "neutral",
-        "displayName": "Technology Card",
-        "canonical": "#192532",
-        "tonalRamp": [
-          "oklch(15% 0.0298 250.99)",
-          "oklch(26% 0.0298 250.99)",
-          "oklch(38% 0.0298 250.99)",
-          "oklch(49% 0.0298 250.99)",
-          "oklch(61% 0.0298 250.99)",
-          "oklch(72% 0.0298 250.99)",
-          "oklch(84% 0.0298 250.99)",
-          "oklch(95% 0.0298 250.99)"
-        ]
-      },
-      "form-paper": {
-        "role": "neutral",
-        "displayName": "Form Paper",
-        "canonical": "#f8faef",
-        "tonalRamp": [
-          "oklch(15% 0.0146 115.03)",
-          "oklch(26% 0.0146 115.03)",
-          "oklch(38% 0.0146 115.03)",
-          "oklch(49% 0.0146 115.03)",
-          "oklch(61% 0.0146 115.03)",
-          "oklch(72% 0.0146 115.03)",
-          "oklch(84% 0.0146 115.03)",
-          "oklch(95% 0.0146 115.03)"
-        ]
-      },
-      "footer": {
-        "role": "neutral",
-        "displayName": "Footer Navy",
-        "canonical": "#0d1420",
-        "tonalRamp": [
-          "oklch(15% 0.0268 260.88)",
-          "oklch(26% 0.0268 260.88)",
-          "oklch(38% 0.0268 260.88)",
-          "oklch(49% 0.0268 260.88)",
-          "oklch(61% 0.0268 260.88)",
-          "oklch(72% 0.0268 260.88)",
-          "oklch(84% 0.0268 260.88)",
-          "oklch(95% 0.0268 260.88)"
-        ]
+        "canonical": "#d7e4e7",
+        "displayName": "line"
       },
       "white": {
-        "role": "neutral",
-        "displayName": "White",
         "canonical": "#ffffff",
-        "tonalRamp": [
-          "oklch(15% 0.0000 89.88)",
-          "oklch(26% 0.0000 89.88)",
-          "oklch(38% 0.0000 89.88)",
-          "oklch(49% 0.0000 89.88)",
-          "oklch(61% 0.0000 89.88)",
-          "oklch(72% 0.0000 89.88)",
-          "oklch(84% 0.0000 89.88)",
-          "oklch(95% 0.0000 89.88)"
-        ]
+        "displayName": "white"
       }
-    },
-    "typographyMeta": {
-      "display": {
-        "displayName": "Hero Display",
-        "purpose": "Oversized hero heading; scale and tracking carry the strong Sora character."
-      },
-      "headline": {
-        "displayName": "Section Headline",
-        "purpose": "Primary section headings with responsive scale."
-      },
-      "service-title": {
-        "displayName": "Service Title",
-        "purpose": "Readable name in each linked service row."
-      },
-      "service-body": {
-        "displayName": "Service Body",
-        "purpose": "Muted, generously led description under a service name."
-      },
-      "button": {
-        "displayName": "Action Label",
-        "purpose": "Semibold primary control labels."
-      },
-      "field-label": {
-        "displayName": "Persistent Field Label",
-        "purpose": "Visible form labels distinct from placeholders."
-      }
-    },
-    "shadows": [
-      {
-        "name": "sphere",
-        "value": "0 22px 45px #070c1430",
-        "purpose": "Grounds the static central sphere."
-      },
-      {
-        "name": "orbital-label",
-        "value": "0 12px 30px #070b1325",
-        "purpose": "Separates diagram labels from their navy backdrop."
-      },
-      {
-        "name": "contact-form",
-        "value": "0 15px 40px #3043120a",
-        "purpose": "Very quiet lift on the lime contact surface."
-      }
-    ],
-    "motion": [
-      {
-        "name": "state-transition",
-        "value": "0.18s ease",
-        "purpose": "Background, color, arrow and menu-icon state transitions only."
-      },
-      {
-        "name": "arrow-primary-hover",
-        "value": "translate(2px,-2px)",
-        "purpose": "Small diagonal movement on primary action hover."
-      },
-      {
-        "name": "arrow-link-hover",
-        "value": "translate(3px,-3px)",
-        "purpose": "Small diagonal movement on service and text-link hover."
-      },
-      {
-        "name": "button-active",
-        "value": "translateY(1px)",
-        "purpose": "Short pressed state."
-      },
-      {
-        "name": "reduced-motion",
-        "value": "none",
-        "purpose": "Disables transitions, animations and smooth scrolling when prefers-reduced-motion is reduce."
-      }
-    ],
-    "breakpoints": [
-      {
-        "name": "wide-desktop-min",
-        "value": "1600px"
-      },
-      {
-        "name": "tablet-max",
-        "value": "1150px"
-      },
-      {
-        "name": "navigation-collapse-max",
-        "value": "900px"
-      },
-      {
-        "name": "mobile-max",
-        "value": "640px"
-      },
-      {
-        "name": "small-mobile-max",
-        "value": "359px"
-      }
-    ]
-  },
-  "components": [
-    {
-      "name": "Primary Button",
-      "kind": "button",
-      "refersTo": "button-primary",
-      "description": "Lime primary action on a dark surface, with a restrained arrow state.",
-      "html": "<a class=\"ds-button-primary\" href=\"#services\">Explore Our Services <svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\"/></svg></a>",
-      "css": ".ds-button-primary{display:inline-flex;align-items:center;justify-content:center;gap:24px;min-height:54px;padding:16px 23px;border:0;border-radius:7px;font:600 13px/1.4 Sora,Arial,sans-serif;text-decoration:none;cursor:pointer;transition:background .18s,transform .18s;background:var(--lime,#d5f77c);color:var(--navy,#101725)}.ds-button-primary svg{transition:transform .18s}.ds-button-primary:hover{background:#e2ffa0}.ds-button-primary:hover svg{transform:translate(2px,-2px)}.ds-button-primary:focus-visible{outline:3px solid var(--cyan,#8ce0e6);outline-offset:5px}.ds-button-primary:active{transform:translateY(1px)}@media(prefers-reduced-motion:reduce){.ds-button-primary,.ds-button-primary svg{transition:none}}"
-    },
-    {
-      "name": "Contact Button",
-      "kind": "button",
-      "refersTo": "button-contact",
-      "description": "Navy action used on the paper contact form; default deployment prepares an email draft.",
-      "html": "<button class=\"ds-button-contact\" type=\"button\">Prepare enquiry email <svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\"/></svg></button>",
-      "css": ".ds-button-contact{display:inline-flex;align-items:center;justify-content:center;gap:24px;min-height:54px;padding:16px 23px;border:0;border-radius:7px;font:600 13px/1.4 Sora,Arial,sans-serif;text-decoration:none;cursor:pointer;transition:background .18s,transform .18s;background:var(--navy,#101725);color:var(--paper,#f5f5ef)}.ds-button-contact svg{transition:transform .18s}.ds-button-contact:hover{background:#28364a}.ds-button-contact:hover svg{transform:translate(2px,-2px)}.ds-button-contact:focus-visible{outline:3px solid #446515;outline-offset:5px}.ds-button-contact:active{transform:translateY(1px)}.ds-button-contact:disabled{opacity:.65;cursor:wait}@media(prefers-reduced-motion:reduce){.ds-button-contact,.ds-button-contact svg{transition:none}}"
-    },
-    {
-      "name": "Outline Button",
-      "kind": "button",
-      "refersTo": "button-outline",
-      "description": "Secondary draft-opening action as used on the light contact form.",
-      "html": "<a class=\"ds-button-outline\" href=\"mailto:mooncrafters@gmail.com\">Open email app to send <svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\"/></svg></a>",
-      "css": ".ds-button-outline{display:inline-flex;align-items:center;justify-content:center;gap:24px;min-height:54px;padding:16px 23px;border:0;border-radius:7px;font:600 13px/1.4 Sora,Arial,sans-serif;text-decoration:none;cursor:pointer;transition:background .18s,transform .18s;background:transparent;border:1px solid #526d2f;color:#203714;font-size:12px}.ds-button-outline svg{transition:transform .18s}.ds-button-outline:hover svg{transform:translate(2px,-2px)}.ds-button-outline:focus-visible{outline:3px solid #446515;outline-offset:5px}.ds-button-outline:active{transform:translateY(1px)}@media(prefers-reduced-motion:reduce){.ds-button-outline,.ds-button-outline svg{transition:none}}"
-    },
-    {
-      "name": "Project Enquiry Field",
-      "kind": "input",
-      "refersTo": "field-input",
-      "description": "A persistent label and white text field from the light contact form.",
-      "html": "<div class=\"ds-field\"><label for=\"ds-fullname\">Full name <span aria-hidden=\"true\">*</span></label><input id=\"ds-fullname\" name=\"fullName\" autocomplete=\"name\" placeholder=\"Your name\" required minlength=\"2\" maxlength=\"100\"/></div>",
-      "css": ".ds-field{display:flex;flex-direction:column;gap:8px;max-width:340px;color:var(--navy,#101725);font-family:Sora,Arial,sans-serif}.ds-field label{font-size:12px;font-weight:500;line-height:1.5}.ds-field input{min-width:0;min-height:46px;background:#fff;border:1px solid #d6dccb;border-radius:5px;color:var(--navy,#101725);padding:12px;font:400 13px/1.6 Sora,Arial,sans-serif;caret-color:#365418}.ds-field input::placeholder{color:#687162;opacity:1}.ds-field input:focus-visible{outline:2px solid #446515;outline-offset:2px;border-color:#446515}"
-    },
-    {
-      "name": "Section Navigation",
-      "kind": "nav",
-      "description": "The desktop section-link language on solid navy; the application adds a labelled mobile toggle.",
-      "html": "<nav class=\"ds-navigation\" aria-label=\"Main navigation\"><a href=\"#services\">Services</a><a href=\"#about\">About</a><a href=\"#work\">Work</a><a href=\"#contact\">Contact</a></nav>",
-      "css": ".ds-navigation{display:flex;flex-wrap:wrap;align-items:center;gap:30px;background:var(--navy,#101725);padding:16px 24px;font-family:Sora,Arial,sans-serif}.ds-navigation a{display:flex;align-items:center;min-height:44px;color:#d7dce4;font-size:13px;text-decoration:none;transition:color .18s}.ds-navigation a:hover{color:var(--lime,#d5f77c)}.ds-navigation a:focus-visible{outline:3px solid var(--cyan,#8ce0e6);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-navigation a{transition:none}}"
-    },
-    {
-      "name": "Service Group and Linked Row",
-      "kind": "card",
-      "refersTo": "service-group",
-      "description": "A coral marketing row inside the navy service shell, with its title, description and enquiry arrow.",
-      "html": "<div class=\"ds-service-group\"><h3>Digital Marketing</h3><p class=\"ds-service-subtitle\">Get seen. Get remembered.</p><a class=\"ds-service-row\" href=\"#contact\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m12 3 3 6 6 3-6 3-3 6-3-6-6-3 6-3Z\"/></svg><div><h4>Branding</h4><p>A clear identity and a consistent voice that make your business unmistakably yours.</p></div><svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\"/></svg></a></div>",
-      "css": ".ds-service-group{max-width:520px;background:#1b2534;border:1px solid #303b48;border-radius:13px;overflow:hidden;padding:28px 30px 12px;color:var(--text,#f6f7f2);font-family:Sora,Arial,sans-serif}.ds-service-group h3{margin:0;font-size:25px;font-weight:500;line-height:1.25;letter-spacing:-.025em}.ds-service-subtitle{margin:10px 0 24px;color:var(--muted,#adb5c2);font-size:12px;line-height:1.75}.ds-service-row{display:flex;align-items:flex-start;gap:17px;padding:23px 0;border-top:1px solid #3b4754;color:inherit;text-decoration:none}.ds-service-row>svg:first-child{color:var(--coral,#f0a5a6);flex-shrink:0;margin-top:2px}.ds-service-row>div{flex:1}.ds-service-row h4{margin:0;font-size:16px;font-weight:500;line-height:1.5;letter-spacing:-.025em}.ds-service-row p{margin:6px 0 0;font-size:13px;line-height:1.8;color:#b0b9c5;max-width:330px}.ds-service-row>svg:last-child{width:16px;height:16px;flex-shrink:0;color:#9eaaba;margin-top:4px;transition:transform .18s,color .18s}.ds-service-row:hover h4,.ds-service-row:hover>svg:last-child{color:var(--lime,#d5f77c)}.ds-service-row:hover>svg:last-child{transform:translate(3px,-3px)}.ds-service-row:focus-visible{outline:3px solid var(--cyan,#8ce0e6);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-service-row>svg:last-child{transition:none}}"
-    },
-    {
-      "name": "Text Link",
-      "kind": "custom",
-      "description": "A quiet inline action with a diagonal arrow, used between sections.",
-      "html": "<a class=\"ds-text-link\" href=\"#contact\">Talk about your project <svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\"/></svg></a>",
-      "css": ".ds-text-link{display:inline-flex;gap:22px;align-items:center;color:var(--text,#f6f7f2);font:500 13px/1.75 Sora,Arial,sans-serif;text-decoration:none}.ds-text-link svg{transition:transform .18s}.ds-text-link:hover svg{transform:translate(3px,-3px)}.ds-text-link:focus-visible{outline:3px solid var(--cyan,#8ce0e6);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-text-link svg{transition:none}}"
-    },
-    {
-      "name": "Orbital Label",
-      "kind": "chip",
-      "description": "A static tilted diagram label; decorative in the production hero rather than a filter or button.",
-      "html": "<div class=\"ds-orbit-label\" aria-hidden=\"true\"><span class=\"ds-label-symbol\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m12 3 3 6 6 3-6 3-3 6-3-6-6-3 6-3Z\"/></svg></span>Create<span class=\"ds-mini-dot\"></span></div>",
-      "css": ".ds-orbit-label{display:inline-flex;align-items:center;gap:12px;padding:11px 14px 11px 10px;border-radius:9px;background:#222d3e;border:1px solid #4e5b6c;color:#f6f7f2;font:500 13px/1.75 Sora,Arial,sans-serif;box-shadow:0 12px 30px #070b1325;transform:rotate(-7deg)}.ds-label-symbol{width:31px;height:31px;border-radius:7px;display:flex;align-items:center;justify-content:center;background:var(--coral,#f0a5a6);color:var(--navy,#101725)}.ds-label-symbol svg{width:18px;height:18px}.ds-mini-dot{width:4px;height:4px;background:#8f9aaa;border-radius:50%;margin-left:9px}"
     }
-  ],
+  },
+  "components": [],
   "narrative": {
-    "northStar": "Good Ideas, Connected",
-    "overview": "Mooncrafters brings creative thinking and practical technology into one confident, approachable world. Deep navy gives bright lime, cyan and coral room to speak; oversized Sora headings, clear service groups and generous spacing carry the message.\n\nStatic geometric diagrams supply the expressive character. Fine orbital lines, a restrained sphere gradient and small tilted labels create depth while the reading path stays direct. Content is visible immediately; interaction uses short CSS state transitions and respects reduced motion.",
-    "keyCharacteristics": [
-      "Deep navy foundation with lime actions and cyan/coral accents.",
-      "One locally hosted Sora variable font for display, body and controls.",
-      "Generous responsive spacing, fine rules and modest corner radii.",
-      "Static, authored SVG geometry with restrained gradient depth.",
-      "Visible content, explicit labels and clear keyboard focus."
-    ],
-    "rules": [
-      {
-        "name": "The Visible Content Rule",
-        "body": "The initial page content stays visible. Do not introduce entrance gates, opacity-zero reveals or animation dependencies.",
-        "section": "elevation"
-      },
-      {
-        "name": "The Action Accent Rule",
-        "body": "Lime marks primary actions and key emphasis. Cyan and coral distinguish supporting ideas; color never replaces the label.",
-        "section": "colors"
-      },
-      {
-        "name": "The One Font Rule",
-        "body": "Use the local Sora family throughout. Build hierarchy with size, weight, tracking and space rather than additional display faces.",
-        "section": "typography"
-      },
-      {
-        "name": "The Quiet Depth Rule",
-        "body": "Keep ordinary content flat. Reserve diffuse shadows and gradients for the orbital illustration, its labels and the contact form.",
-        "section": "elevation"
-      }
-    ],
-    "dos": [
-      "Do use the navy foundation, lime primary actions and visible focus treatment.",
-      "Do keep service names and descriptions readable, with consistent grouped rows.",
-      "Do use static SVG geometry and modest gradients for expressive illustration.",
-      "Do preserve the responsive single-column reading order and generous section spacing.",
-      "Do keep content visible before JavaScript hydration and respect reduced motion."
-    ],
-    "donts": [
-      "Don't add autoplay video, particles, WebGL or continuous animation to the loading path.",
-      "Don't hide page content behind entrance animations.",
-      "Don't replace the local Sora family with multiple remote font families.",
-      "Don't use invented client results, testimonials or performance counters as visual proof.",
-      "Don't give every content block a glow, gradient or oversized rounded shell."
+    "status": "Restored original screenshot template. DESIGN.md is the active visual reference.",
+    "typography": "Manrope display, DM Sans body, Cormorant Garamond About wordmark.",
+    "routes": [
+      "#/",
+      "#/about",
+      "#/services",
+      "#/clients",
+      "#/careers",
+      "#/contact"
     ]
   }
 }
