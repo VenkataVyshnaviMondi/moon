@@ -1,0 +1,22 @@
+{
+  "brand-mark.webp": {
+    "source": "https://mooncrafters.vercel.app/logo.png",
+    "method": "Cropped existing agency atom mark; resized and encoded as WebP."
+  },
+  "swiggy.webp": {
+    "source": "https://mooncrafters.vercel.app/swiggy.png",
+    "method": "Existing listed client logo; trimmed whitespace and encoded as WebP."
+  },
+  "ayantech.webp": {
+    "source": "https://mooncrafters.vercel.app/ayantech.png",
+    "method": "Existing listed client logo; trimmed whitespace and encoded as WebP."
+  },
+  "tej.webp": {
+    "source": "https://mooncrafters.vercel.app/Chippada%20Tej%20Kumar.png",
+    "method": "Existing CEO portrait cropped and encoded as WebP."
+  },
+  "malla.webp": {
+    "source": "https://mooncrafters.vercel.app/Malla%20Krishnachaitanya.png",
+    "method": "Existing CEO portrait cropped and encoded as WebP."
+  }
+}

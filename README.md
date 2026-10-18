@@ -1,38 +1,80 @@
-# Moon Crafters
+# Mooncrafters
 
-A responsive static website with Home, About, Services, Our Clients, Careers and Contact pages. Interactions are authored in strict TypeScript (`src/app.ts`) and compiled to browser-ready `app.js`. The compiled site needs no runtime dependencies.
+A responsive agency website built with React, TypeScript and Vite. The production build pre-renders the complete page into HTML, then hydrates it for mobile navigation and enquiry interactions. Content, navigation and calls to action are readable before JavaScript runs.
 
-## Preview
+## Develop and build
 
-From this directory run `python -m http.server 5173`, then open http://localhost:5173. You can also open `index.html` directly, although a local server is recommended.
+```sh
+npm install
+npm run dev
+```
 
-## Hero video
+Create and preview the production build:
 
-The supplied `video.mp4` is used from this directory, beside `index.html`. The hero automatically switches from its light-blue fallback artwork to the video once it loads. The video is muted, loops and plays inline. Reduced-motion preferences pause video and automatic CEO slide changes.
+```sh
+npm run build
+npm run preview -- --port 4173
+```
 
-## Enquiries
+`npm run build` runs TypeScript checks, builds with Vite, and runs `scripts/prerender.mjs`. The deployable output is `dist/`. `npm run typecheck` checks types separately. `vercel.json` configures the production build and output directory; no deployment has been made as part of this implementation.
 
-All contact fields are required. Phone accepts exactly 10 digits. Send enquiry opens a Gmail compose tab with the receiver, subject and form details prefilled. The visitor must sign in if needed, review and click Send in Gmail. A mailto fallback is also provided. The website does not send or store enquiries itself.
+## Content and components
 
-The recipient is `mooncrafters@gamil.com`, exactly as supplied. Confirm that the `gamil.com` spelling is intentional before launch; change it throughout `app.js` and `index.html` if needed.
+Business content follows the inspected [Mooncrafters reference website](https://mooncrafters.vercel.app/). Services are Branding, Social Media Marketing, Google Ads, Meta Ads, YouTube Marketing, Web Designing, IT Solutions and Zoho Projects. Work proof is limited to the reference's Swiggy and Ayantech client logos. No testimonials, awards, project outcomes or performance results have been invented.
 
-## Careers
+- [src/content.ts](src/content.ts): service descriptions and verified contact/social details.
+- [src/App.tsx](src/App.tsx): page structure, About, Work, Contact and `ProjectCard`.
+- [src/components](src/components): `Header`, `Hero`, `ServicesSection`/`ServiceCard`, `ProcessSteps`, `ContactForm`, `Footer` and shared SVG icons.
+- [src/styles.css](src/styles.css): responsive layout, typography, focus states and motion preferences.
+- [public](public): optimized supplied imagery, favicon and the local font.
 
-Careers accepts general applications by email. No unconfirmed vacancies or experience requirements are advertised.
+Original source files and assets remain in the repository for reference. They are not part of the new production loading path.
 
-## Hosting
+## Enquiry delivery
 
-Upload `index.html`, `style.css`, `app.js`, both CEO portraits, the three logo images, the `services` directory and `video.mp4` (when available) to any static host. Hash navigation works without server rewrite configuration. The site uses Google Fonts and an embedded Google Map, which require internet access.
+By default, the form prepares a draft addressed to `mooncrafters@gmail.com`. It explicitly says that no enquiry has been sent, and presents an **Open email app to send** link. The visitor must review and send the email in their email app. Without JavaScript, the native form uses a `mailto:` POST fallback with the same review-and-send requirement. No submission is stored by this static site.
 
-## TypeScript development
+To enable direct submissions, copy `.env.example` to `.env.local`, configure a real endpoint, and rebuild:
 
-Install dependencies with npm install. Run npm run build after editing src/app.ts, or npm run dev to watch for changes. npm run typecheck validates types without emitting JavaScript. Keep the static HTTP server running separately for preview.
+```dotenv
+VITE_CONTACT_ENDPOINT=/api/contact
+```
 
-The client animation is authored in src/client-molten.ts and compiles to client-molten.js. Include client-molten.js before app.js when hosting. It needs no React runtime; the supplied shader animation was adapted to the existing TypeScript project.
+The endpoint may be an HTTPS URL or a same-origin path beginning with a single `/`. This repository does not provide that backend. The form sends `POST` JSON with these fields:
 
+```json
+{
+  "fullName": "Visitor name",
+  "email": "visitor@example.com",
+  "phone": "",
+  "service": "Web Designing",
+  "goals": "The visitor's project description.",
+  "website": ""
+}
+```
 
-Testimonials: the home carousel uses clearly labeled illustrative feedback for Zoho Projects, startup IT solutions and digital marketing. Replace clientFeedback in src/app.ts with approved real client feedback when available, then remove the sample disclosure and sample labels. No real clients, identities or performance results are attributed to these samples.
+The UI reports success only after an HTTP 2xx response; failures and timeouts show an honest error. Before returning 2xx, the endpoint must validate fields, apply rate limiting and spam protection, and persist or deliver the enquiry. Configure CORS for an external endpoint. Browser validation and the honeypot do not replace server validation.
 
+`VITE_` variables are public build-time configuration, never secrets. Keep email-provider credentials and other secrets on the backend. Changes require rebuilding and redeploying the site. If no valid endpoint is configured, the email draft flow remains active.
 
-About hero animation: src/about-particles.ts compiles to about-particles.js, which must load before app.js. The effect uses Canvas 2D and local logo1.png; no React runtime or additional dependency is needed.
+## Verification and performance
 
+Install Chromium once, build the site, and keep the production preview running on port 4173 in another terminal:
+
+```sh
+npx playwright install chromium
+npm run build
+npm run preview -- --port 4173
+```
+
+Then run:
+
+```sh
+npm run check
+```
+
+The browser checks exercise pre-rendered content, navigation, enquiry behavior, responsive layouts, automated accessibility rules and runtime errors, and collect a throttled mobile performance sample. Results and screenshots are written to `.impeccable/review/`; the machine-readable report is `.impeccable/review/checks.json`. Use `VERIFY_URL` to test another running URL. Consult the generated report and `PERFORMANCE.md` for measurements actually obtained; the presence of a check does not imply it passed.
+
+The production site uses one locally hosted Sora font of about 33 KB, optimized WebP versions of supplied images with explicit dimensions, a raster-free SVG hero, and short CSS transitions with reduced-motion support. It loads no animation library, background video, particles, custom cursor or third-party tracking scripts. Below-fold images are lazy loaded. The full initial HTML contains the headline, services and enquiry form.
+
+LCP ≤ 2.5 seconds, INP ≤ 200 milliseconds and CLS ≤ 0.1 are measurement goals, not guarantees. Local Chromium samples are not field Core Web Vitals; the synthetic interaction timing is not field INP. Real-user monitoring after deployment is needed to assess those goals. External social accounts, email-app delivery and a future submission backend require separate integration checks.

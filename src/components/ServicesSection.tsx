@@ -1,0 +1,14 @@
+import { itServices, marketingServices, type Service } from '../content';
+import Icon from './Icon';
+export function ServiceCard({ service }: { service: Service }) {
+  function select() { window.dispatchEvent(new CustomEvent('moon:service', { detail: service.name })); }
+  return <a className="service-card" href="#contact" onClick={select}><Icon name={service.icon} /><div><h4>{service.name}</h4><p>{service.description}</p></div><Icon name="arrow" className="service-arrow" /></a>;
+}
+function ServiceIllustration({ type }: { type: 'marketing' | 'technology' }) {
+  return type === 'marketing'
+    ? <svg className="service-illustration" viewBox="0 0 210 150" fill="none" aria-hidden="true"><path d="M40 66 130 30v85L40 84Z" stroke="currentColor" strokeWidth="2" /><path d="m54 90 9 34h20L72 84M35 63H20v25h15M143 44l17-12m-14 38h25m-28 25 17 12M118 36v73M40 66v18" stroke="currentColor" strokeWidth="2" /><circle cx="172" cy="27" r="9" fill="#d5f77c" /><path d="m175 114 3 9 9 3-9 3-3 9-3-9-9-3 9-3Z" fill="#8ce0e6" /></svg>
+    : <svg className="service-illustration" viewBox="0 0 210 150" fill="none" aria-hidden="true"><rect x="24" y="26" width="154" height="102" rx="8" stroke="currentColor" strokeWidth="2" /><path d="M24 48h154M35 37h2m8 0h2m8 0h2m23 31-17 16 17 16m40-32 17 16-17 16m-15-37-12 44" stroke="currentColor" strokeWidth="2" /><path d="m174 8 3 9 9 3-9 3-3 9-3-9-9-3 9-3Z" fill="#f0a5a6" /><circle cx="29" cy="126" r="12" fill="#8ce0e6" /><path d="m24 126 4 4 7-8" stroke="#101725" strokeWidth="2" /></svg>;
+}
+export default function ServicesSection() {
+  return <section className="section services-section" id="services" aria-labelledby="services-heading"><div className="container"><div className="section-heading"><h2 id="services-heading">Different expertise.<br /><span className="text-muted">One shared ambition.</span></h2><p>From the first impression to the technology behind it, we help every part of your digital presence work together.</p></div><div className="services-grid"><div className="service-group marketing-group" id="digital-marketing"><div className="service-group-header"><div><h3>Digital Marketing</h3><p>Get seen. Get remembered.</p></div><ServiceIllustration type="marketing" /></div><div className="service-list">{marketingServices.map(service => <ServiceCard service={service} key={service.name} />)}</div></div><div className="service-group technology-group" id="it-services"><div className="service-group-header"><div><h3>IT Services</h3><p>Good ideas. Built to work.</p></div><ServiceIllustration type="technology" /></div><div className="service-list">{itServices.map(service => <ServiceCard service={service} key={service.name} />)}</div><div className="technology-note"><span className="status-dot" /><p>Your brand and your technology.<br /><strong>Finally, on the same page.</strong></p></div></div></div></div></section>;
+}

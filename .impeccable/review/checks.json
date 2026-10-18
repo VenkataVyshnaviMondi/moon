@@ -1,0 +1,435 @@
+{
+  "generatedAt": "2026-10-18T05:32:25.213Z",
+  "baseURL": "http://127.0.0.1:4173",
+  "checks": [
+    {
+      "name": "Production HTML includes readable essential content without JavaScript",
+      "passed": true,
+      "detail": {
+        "h1": "Grow your brand.\nBuild your\ndigital future.",
+        "services": 8
+      }
+    },
+    {
+      "name": "All internal anchor links resolve and external links use valid URLs",
+      "passed": true,
+      "detail": {
+        "links": 40,
+        "internalAnchors": 34,
+        "externalNetworkLinksNotRequested": true
+      }
+    },
+    {
+      "name": "Images load and declare explicit intrinsic dimensions",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:4173/images/brand-mark.webp",
+          "complete": true,
+          "naturalWidth": 100,
+          "width": "44",
+          "height": "40",
+          "loading": "auto"
+        },
+        {
+          "src": "http://127.0.0.1:4173/images/tej.webp",
+          "complete": true,
+          "naturalWidth": 144,
+          "width": "48",
+          "height": "48",
+          "loading": "lazy"
+        },
+        {
+          "src": "http://127.0.0.1:4173/images/malla.webp",
+          "complete": true,
+          "naturalWidth": 144,
+          "width": "48",
+          "height": "48",
+          "loading": "lazy"
+        },
+        {
+          "src": "http://127.0.0.1:4173/images/swiggy.webp",
+          "complete": true,
+          "naturalWidth": 268,
+          "width": "210",
+          "height": "95",
+          "loading": "lazy"
+        },
+        {
+          "src": "http://127.0.0.1:4173/images/ayantech.webp",
+          "complete": true,
+          "naturalWidth": 310,
+          "width": "210",
+          "height": "95",
+          "loading": "lazy"
+        },
+        {
+          "src": "http://127.0.0.1:4173/images/brand-mark.webp",
+          "complete": true,
+          "naturalWidth": 100,
+          "width": "44",
+          "height": "40",
+          "loading": "auto"
+        }
+      ]
+    },
+    {
+      "name": "Responsive layout fits a 360px viewport",
+      "passed": true,
+      "detail": {
+        "viewport": 360,
+        "scroll": 360,
+        "overflowElements": []
+      }
+    },
+    {
+      "name": "Responsive layout fits a 390px viewport",
+      "passed": true,
+      "detail": {
+        "viewport": 390,
+        "scroll": 390,
+        "overflowElements": []
+      }
+    },
+    {
+      "name": "Responsive layout fits a 768px viewport",
+      "passed": true,
+      "detail": {
+        "viewport": 768,
+        "scroll": 768,
+        "overflowElements": []
+      }
+    },
+    {
+      "name": "Responsive layout fits a 1440px viewport",
+      "passed": true,
+      "detail": {
+        "viewport": 1440,
+        "scroll": 1440,
+        "overflowElements": []
+      }
+    },
+    {
+      "name": "Desktop WCAG 2 A/AA and WCAG 2.1 AA axe scan",
+      "passed": true
+    },
+    {
+      "name": "Mobile navigation opens and passes axe with menu open",
+      "passed": true
+    },
+    {
+      "name": "Escape closes the mobile menu and returns keyboard focus",
+      "passed": true
+    },
+    {
+      "name": "Mobile navigation closes after choosing a section",
+      "passed": true
+    },
+    {
+      "name": "Mobile WCAG 2 A/AA and WCAG 2.1 AA axe scan with menu closed",
+      "passed": true
+    },
+    {
+      "name": "Choosing a service preselects it in the contact form",
+      "passed": true
+    },
+    {
+      "name": "Invalid enquiries do not create an email draft",
+      "passed": true
+    },
+    {
+      "name": "A valid enquiry creates an honest, unsent mailto draft without network submission",
+      "passed": true,
+      "detail": {
+        "recipient": "mooncrafters@gmail.com",
+        "selectedService": "Google Ads",
+        "networkSubmissions": 0,
+        "emailSent": false
+      }
+    },
+    {
+      "name": "Cold mobile laboratory performance sample",
+      "passed": true,
+      "detail": {
+        "lcpMs": 1504,
+        "cls": 0,
+        "transferredBytes": 129285,
+        "requests": 5,
+        "javascriptResources": 1,
+        "cssResources": 1,
+        "syntheticMenuLongestEventMs": 120
+      }
+    },
+    {
+      "name": "No browser console errors, page errors, failed requests or failed responses",
+      "passed": true
+    }
+  ],
+  "accessibility": [
+    {
+      "label": "desktop",
+      "rulesPassed": 28,
+      "incompleteRules": [
+        {
+          "id": "color-contrast",
+          "elements": [
+            [
+              ".orbit-caption"
+            ]
+          ]
+        }
+      ],
+      "violations": []
+    },
+    {
+      "label": "mobile-menu-open",
+      "rulesPassed": 28,
+      "incompleteRules": [
+        {
+          "id": "color-contrast",
+          "elements": [
+            [
+              "#hero-heading"
+            ],
+            [
+              "#hero-heading > span"
+            ],
+            [
+              ".hero-copy > p"
+            ],
+            [
+              ".orbit-caption"
+            ]
+          ]
+        }
+      ],
+      "violations": []
+    },
+    {
+      "label": "mobile-menu-closed",
+      "rulesPassed": 28,
+      "incompleteRules": [
+        {
+          "id": "color-contrast",
+          "elements": [
+            [
+              ".orbit-caption"
+            ]
+          ]
+        }
+      ],
+      "violations": []
+    }
+  ],
+  "responsive": [
+    {
+      "width": 360,
+      "viewport": 360,
+      "scroll": 360,
+      "overflowElements": []
+    },
+    {
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflowElements": []
+    },
+    {
+      "width": 768,
+      "viewport": 768,
+      "scroll": 768,
+      "overflowElements": []
+    },
+    {
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1440,
+      "overflowElements": []
+    }
+  ],
+  "runtime": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "failedResponses": []
+  },
+  "performance": {
+    "environment": {
+      "browser": "156.0.8078.4",
+      "viewport": "390x844",
+      "deviceScaleFactor": 2,
+      "cpuSlowdown": 4,
+      "latencyMs": 150,
+      "downloadBitsPerSecond": 1600000,
+      "uploadBitsPerSecond": 750000,
+      "cacheDisabled": true
+    },
+    "lcp": {
+      "milliseconds": 1504,
+      "size": 43645,
+      "url": null,
+      "element": "H1"
+    },
+    "clsBeforeInteraction": 0,
+    "clsAfterMenuInteraction": 0,
+    "initialTransferredBytes": 129285,
+    "initialRequests": 5,
+    "timingTransferBytes": 129126,
+    "navigation": {
+      "name": "http://127.0.0.1:4173/",
+      "entryType": "navigation",
+      "startTime": 0,
+      "duration": 1976.7000000001863,
+      "navigationId": 5512,
+      "initiatorType": "navigation",
+      "deliveryType": "",
+      "nextHopProtocol": "http/1.1",
+      "renderBlockingStatus": "non-blocking",
+      "contentType": "text/html",
+      "contentEncoding": "gzip",
+      "workerStart": 0,
+      "workerRouterEvaluationStart": 0,
+      "workerCacheLookupStart": 0,
+      "workerMatchedSourceType": "",
+      "workerFinalSourceType": "",
+      "redirectStart": 0,
+      "redirectEnd": 0,
+      "fetchStart": 0.6000000005587935,
+      "domainLookupStart": 3.300000000745058,
+      "domainLookupEnd": 3.6000000005587935,
+      "connectStart": 3.6000000005587935,
+      "secureConnectionStart": 0,
+      "connectEnd": 4.900000000372529,
+      "requestStart": 5,
+      "responseStart": 10.700000000186265,
+      "firstInterimResponseStart": 0,
+      "finalResponseHeadersStart": 10.700000000186265,
+      "responseEnd": 197.6000000005588,
+      "transferSize": 6217,
+      "encodedBodySize": 5917,
+      "decodedBodySize": 25817,
+      "responseStatus": 200,
+      "serverTiming": [],
+      "unloadEventStart": 0,
+      "unloadEventEnd": 0,
+      "domInteractive": 268.20000000018626,
+      "domContentLoadedEventStart": 1686.4000000003725,
+      "domContentLoadedEventEnd": 1686.800000000745,
+      "domComplete": 1963,
+      "loadEventStart": 1976.7000000001863,
+      "loadEventEnd": 1976.7000000001863,
+      "type": "navigate",
+      "redirectCount": 0,
+      "activationStart": 0,
+      "criticalCHRestart": 0,
+      "notRestoredReasons": null,
+      "confidence": {
+        "randomizedTriggerRate": 0.4994798,
+        "value": "high"
+      }
+    },
+    "javascript": [
+      {
+        "name": "http://127.0.0.1:4173/assets/index-Bae3aUUX.js",
+        "type": "script",
+        "transferSize": 75693,
+        "encodedBodySize": 75393,
+        "decodedBodySize": 245892,
+        "duration": 795.7000000001863
+      }
+    ],
+    "stylesheets": [
+      {
+        "name": "http://127.0.0.1:4173/assets/index-BsN4TG5j.css",
+        "type": "link",
+        "transferSize": 6166,
+        "encodedBodySize": 5866,
+        "decodedBodySize": 25687,
+        "duration": 300.6000000005588
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://127.0.0.1:4173/fonts/sora-latin.woff2",
+        "type": "link",
+        "transferSize": 33952,
+        "encodedBodySize": 33652,
+        "decodedBodySize": 33652,
+        "duration": 580.4000000003725
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/index-Bae3aUUX.js",
+        "type": "script",
+        "transferSize": 75693,
+        "encodedBodySize": 75393,
+        "decodedBodySize": 245892,
+        "duration": 795.7000000001863
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/index-BsN4TG5j.css",
+        "type": "link",
+        "transferSize": 6166,
+        "encodedBodySize": 5866,
+        "decodedBodySize": 25687,
+        "duration": 300.6000000005588
+      },
+      {
+        "name": "http://127.0.0.1:4173/images/brand-mark.webp",
+        "type": "link",
+        "transferSize": 7098,
+        "encodedBodySize": 6798,
+        "decodedBodySize": 6798,
+        "duration": 314.3999999994412
+      }
+    ],
+    "longTasks": [
+      {
+        "startTime": 1508.800000000745,
+        "duration": 469
+      },
+      {
+        "startTime": 2011.6000000005588,
+        "duration": 106
+      }
+    ],
+    "syntheticMenuInteraction": {
+      "eventTimingEntries": [
+        {
+          "name": "pointerdown",
+          "duration": 120,
+          "interactionId": 824,
+          "startTime": 3764.300000000745
+        },
+        {
+          "name": "pointerup",
+          "duration": 112,
+          "interactionId": 824,
+          "startTime": 3764.4000000003725
+        },
+        {
+          "name": "click",
+          "duration": 112,
+          "interactionId": 824,
+          "startTime": 3764.4000000003725
+        }
+      ],
+      "longestObservedEventMs": 120,
+      "note": "Event Timing omits events under its 16 ms reporting threshold. This synthetic sample is not field INP."
+    },
+    "goals": {
+      "lcpMs": 2500,
+      "inpMs": 200,
+      "cls": 0.1,
+      "note": "Goals only; performance observations do not gate the functional checks. Real-user measurement is still required."
+    }
+  },
+  "limitations": [
+    "Local Chromium laboratory checks are not field Core Web Vitals.",
+    "One throttled sample is indicative, not a guarantee. Event Timing from a synthetic menu interaction is not field INP.",
+    "External social profiles and mail delivery are not exercised; no email is sent."
+  ],
+  "summary": {
+    "passed": 17,
+    "failed": 0
+  }
+}
